@@ -45,7 +45,7 @@
         </head>
         <body>
             <header class="container center header">
-                <div class="item i-b v-middle ph12 lg2 lg-left">
+                <div class="item i-b v-middle ph12 lg2 text-center">
                     <h1 class="logo">%s</h1>
                 </div>
     ';
@@ -57,10 +57,10 @@
     );
 
     // Crear el menú
-    $menu = new Menu();
+    // $menu = new Menu();
     
     // Renderizar el menú
-    $menu->render();
+    // $menu->render();
 
     print('
         </header>
