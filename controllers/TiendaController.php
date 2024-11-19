@@ -15,5 +15,16 @@
 
             return $this->execute_prepared_select($query, 's', ['%' . $valor . '%']);
         }
+
+        // Consultar por precio con operador de comparacion predeterminado
+        public function filterTiendaPrecio($query, $operador, $precio) {
+            // Decodificar el operador en caso de que venga como entidad HTML
+            $operador = html_entity_decode($operador);
+
+            // Construir la consulta segura con el operador validado
+            $finalQuery = $query . " " . $operador . " ?";
+
+            return $this->execute_prepared_select($finalQuery, 'd', [$precio]);
+        }
     }
 ?>

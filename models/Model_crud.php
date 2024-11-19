@@ -73,14 +73,14 @@
 
             // Preparar la consulta
             $stmt = $this->conn->prepare($query);
-            
+
             // Verificar si la preparación de la consulta fue exitosa
             if ($stmt === false) {
                 error_log("Error en la preparación de la consulta: ".$this->conn->error);
                 $this->db_close();
                 return false;
             }
-            
+
             // Vincula los parámetros a la consulta preparada (según el tipo)
             if ($types && $params) {
                 $stmt->bind_param($types,...$params);
@@ -93,8 +93,9 @@
                 $param = is_string($param) ? "'$param'" : $param;
                 $debug_query = preg_replace('/\?/', $param, $debug_query, 1);
             }
+
 /*
-            if (($_POST['r'] == 'songs-edit' && isset($_POST['crud']))) {
+            if (isset($_POST['r']) && ($_POST['r'] == 'tienda-filter' && isset($_POST['crud']))) {
                 echo json_encode([
                     'success' => false,
                     'msg01' => 'El nombre de la canción',
@@ -105,7 +106,7 @@
                 ]);
                 exit();
             }
-*/          
+*/
 
             // Ejecutar la consulta
             $stmt->execute();

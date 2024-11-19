@@ -59,6 +59,94 @@
                         id="idActionButtonsTopTienda"
                         name="actionButtonsTopTienda"
                 >
+                    <!-- Inputs Radio de la izquierda -->
+                    <div class="form-group text-start style="justify-content: flex-left;"">
+                        <form>
+                            <div class="form-check">
+                                <input 
+                                    class="form-check-input" 
+                                    type="radio" 
+                                    name="searchOption" 
+                                    id="searchNombre_fabricante" 
+                                    value="nombre_fabricante"
+                                    data-sql-consult="SELECT * FROM productos_fabricante WHERE nombre_fabricante LIKE ?"
+                                    data-sql-select="SELECT DISTINCT nombre_fabricante FROM productos_fabricante ORDER BY nombre_fabricante"
+                                    checked
+                                >
+                                <label class="form-check-label" for="searchNombre_fabricante">
+                                    Búsqueda por el Nombre de Fabricante
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input 
+                                    class="form-check-input" 
+                                    type="radio" 
+                                    name="searchOption" 
+                                    id="searchNombre_producto" 
+                                    value="nombre_producto"
+                                    data-sql-consult="SELECT * FROM productos_fabricante WHERE nombre_producto LIKE ?"
+                                    data-sql-select="SELECT DISTINCT nombre_producto FROM productos_fabricante ORDER BY nombre_producto"
+                                >
+                                <label class="form-check-label" for="searchNombre_producto">
+                                    Búsqueda por Tipo de Producto
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input 
+                                    class="form-check-input" 
+                                    type="radio" 
+                                    name="searchOption" 
+                                    id="searchPrecio" 
+                                    value="precio"
+                                    data-sql-consult="SELECT * FROM productos_fabricante WHERE precio"
+                                    data-sql-select="SELECT DISTINCT precio FROM productos_fabricante ORDER BY precio"
+                                >
+                                <label class="form-check-label" for="searchPrecio">
+                                    Búsqueda por Precio
+                                </label>
+                            </div>
+
+                        </form>
+                    </div>
+                    <!-- Selectores de la parte central -->
+                    <div class="form-group text-center" id="idDynamicDivSelectFilter" style="justify-content: flex-center;">
+                    </div>
+                    <!-- Botones FILTRAR y RESET de la parte derecha -->
+                    <div class="close-button" id="idActionButtonsTopRight" style="justify-content: flex-end;">
+                        <div class="button-container" id="idActionTiendaButtonsFilterContainer">
+                            <button class="btn-secondary-cancel" type="reset" value="NO" id="idResetTiendaFilter">
+                                Reset
+                            </button>
+                            <button 
+                                id="idEjecutarTiendaFilter"
+                                class="btn-primary-confirm" 
+                                type="submit" 
+                                value="SI"
+                                onclick="filterTienda(this)"
+                            >
+                                Filtrar
+                            </button>
+                            <input type="hidden" name="crud" value="filter">
+                            <input type="hidden" name="r" value="tienda-filter">
+                            <input type="hidden" name="rowid" value="">
+                        </div>
+                    </div>
+                </div>
+                <div id="tablaContainer">
+                <table class="table-smartgrid w-100 mt-3" style="hight: 100;">
+					<thead class="bg-secondary">
+						<tr>
+        ';
+
+/*
+                        <div class="mb-3 mt-3">
+                            <div class="form-group" id="idDynamicDivSelectFilter">
+
+                            </div>
+                        </div>
+*/
+
+/*
                     <!-- Botones a la izquierda -->
                     <div class="col-lg-3 action-buttons d-flex justify-content-start" id="idActionButtonsTopLeftTienda">
                         <form method="POST">
@@ -88,14 +176,8 @@
                                 <span class="material-icons">filter_list</span> <!-- Ícono de filtro -->
                             </button>
                         </form>
-                    </div>                
-                </div>
-
-                <table class="table-smartgrid w-100 mt-3" style="hight: 100;">
-					<thead class="bg-secondary">
-						<tr>
-        ';
-
+                    </div>
+*/
         // LA CABECERA DE LA TABLA
         foreach ($tienda[0] as $key_row => $row) {
             $template_tienda .= '
@@ -148,6 +230,7 @@
 
         $template_tienda .= '
                 </table>
+                </div>
             </div>
         ';
 

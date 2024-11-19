@@ -41,6 +41,7 @@
             <link rel="stylesheet" href="./public/css/tables.css">
             <link rel="stylesheet" href="./public/css/cards.css">
             <link rel="stylesheet" href="../public/css/alerts.css">
+            <link rel="stylesheet" href="../public/css/select_filter.css">
 
         </head>
         <body>

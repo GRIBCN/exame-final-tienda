@@ -14,7 +14,7 @@
             <script src="./public/js/SelectElementJS.js"></script>
             <script src="./public/js/reload.js"></script>
             <script src="./public/js/script.js"></script>
-            <script type="module" src="./public/js/script_movies.js"></script>
+            <script type="module" src="./public/js/script_tienda.js"></script>
 
             <!-- Popper.js y Bootstrap JS -->
             <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
